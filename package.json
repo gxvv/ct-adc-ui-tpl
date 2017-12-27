@@ -10,6 +10,10 @@
     "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
+    "ct-adc-auto-complete": "^2.0.2",
+    "ct-adc-form": "^2.2.0",
+    "ct-adc-list": "^3.0.0",
+    "ct-adc-page": "^1.0.1",
     "highlight.js": "github:isagalaev/highlight.js",
     "marked": "^0.3.7",
     "vue": "^2.2.1",

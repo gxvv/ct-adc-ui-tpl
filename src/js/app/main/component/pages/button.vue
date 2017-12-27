@@ -7,7 +7,7 @@
             <button type="button" class="btn btn-default">（默认样式）Default</button><br>
             推荐用法：取消、关闭。当取消、关闭操作不会产生任何影响时使用。
             <blockquote>
-                <a href="javascript:;" class="clip" data-clipboard-text="Just because you can doesn't mean you should — clipboard.js">
+                <a href="javascript:;" class="clip">
                   复制代码
                 </a>
             </blockquote>
@@ -64,7 +64,6 @@ export default {
     mounted() {
         const {hljs} = window;
 
-        console.log(hljs);
         $('pre code').each(function(i, block) {
             hljs.highlightBlock(block);
         });
