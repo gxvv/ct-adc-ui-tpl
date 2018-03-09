@@ -24,20 +24,32 @@
 
 [github](https://github.com/ct-adc/adc-page)
     </markdown>
-    <page form
+    <h5 id="example1" class="pt20">例子1</h5>
+
+    <div class="clearfix"><page form
           :curr-page="pageCfg.pageIndex"
           :page-len="pageCfg.pageSize"
-          :total-num="pageCfg.count" @change-page="changePage"></page>
+          :total-num="pageCfg.count" @change-page="changePage"></page></div>
+    <div>
+      <code-snippet>
+        &lt;page form
+              :curr-page="pageCfg.pageIndex"
+              :page-len="pageCfg.pageSize"
+              :total-num="pageCfg.count" @change-page="changePage"&gt;&lt;/page&gt;
+      </code-snippet>
+    </div>
   </div>
 </template>
 
 <script>
 import Page from 'ct-adc-page';
 import Markdown from 'common/markdown';
+import CodeSnippet from 'common/code-snippet';
 export default {
     components: {
         Page,
-        Markdown
+        Markdown,
+        CodeSnippet
     },
     data() {
         return {

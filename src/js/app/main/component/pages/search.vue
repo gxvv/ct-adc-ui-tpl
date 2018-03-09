@@ -38,12 +38,7 @@
     </form>
 </div>
 <p>
-    <blockquote class="clip-b">
-        <a href="javascript:;" class="clip">
-          复制Template代码
-        </a>
-    </blockquote>
-    <div class="highlight"><pre><code class="html">
+    <code-snippet>
 &lt;div class="well well-sm clearfix"&gt;
     &lt;form action="javascript:;" class="form-horizontal"&gt;
         &lt;div class="row"&gt;
@@ -85,13 +80,8 @@
         &lt;/div&gt;
     &lt;/form&gt;
 &lt;/div&gt;
-    </code></pre></div>
-    <blockquote class="clip-b">
-        <a href="javascript:;" class="clip">
-          复制Script代码
-        </a>
-    </blockquote>
-    <div class="highlight"><pre><code class="javascript">
+</code-snippet>
+    <code-snippet>
       import AutoComplete from 'ct-adc-auto-complete';
       export default {
           props: {
@@ -152,7 +142,7 @@
               });
           }
       };
-    </code></pre></div>
+    </code-snippet>
 </p>
 <h5 id="example2" class="pt20">例子2</h5>
 <div class="well well-sm clearfix">
@@ -205,12 +195,7 @@
   </form>
 </div>
 <p>
-    <blockquote class="clip-b">
-        <a href="javascript:;" class="clip">
-          复制Template代码
-        </a>
-    </blockquote>
-    <div class="highlight"><pre><code class="html">
+    <code-snippet>
 &lt;div class="well well-sm clearfix"&gt;
     &lt;form action="javascript:;" class="form-horizontal"&gt;
         &lt;div class="row"&gt;
@@ -252,13 +237,8 @@
         &lt;/div&gt;
     &lt;/form&gt;
 &lt;/div&gt;
-    </code></pre></div>
-    <blockquote class="clip-b">
-        <a href="javascript:;" class="clip">
-          复制Script代码
-        </a>
-    </blockquote>
-    <div class="highlight"><pre><code class="javascript">
+    </code-snippet>
+    <code-snippet>
       import AutoComplete from 'ct-adc-auto-complete';
       export default {
           props: {
@@ -319,7 +299,7 @@
               });
           }
       };
-    </code></pre></div>
+    </code-snippet>
 </p>
 </div></template>
 
@@ -369,25 +349,6 @@ export default {
     },
     created() {
         this.setList();
-    },
-    mounted() {
-        const {hljs} = window;
-
-        $('pre code').each(function(i, block) {
-            hljs.highlightBlock(block);
-        });
-
-        const clipboard = new window.Clipboard('.clip', {
-            text: function(...args) {
-                console.log(args);
-                return $('.html').text();
-            }
-        });
-
-        clipboard.on('success', function(e) {
-            new MiniMsg({content: '复制成功'}).animation();
-            e.clearSelection();
-        });
     }
 };
 </script>

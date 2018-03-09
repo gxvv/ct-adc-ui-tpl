@@ -30,12 +30,12 @@ export default {
             {
                 title: '组件',
                 child: [
-                    { path: 'modal', title: '弹出表单' },
+                    // { path: 'modal', title: '弹出表单' },
                     { path: 'table', title: '列表' },
                     { path: 'search', title: '搜索' },
                     { path: 'autocomplete', title: '自动完成' },
                     { path: 'pager', title: '分页' },
-                    { path: 'minimsg', title: 'tip提示' },
+                    { path: 'minimsg', title: '弱提示' },
                     { path: 'datepicker', title: '时间选择' }
                 ]
             },

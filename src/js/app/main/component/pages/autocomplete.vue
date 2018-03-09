@@ -32,15 +32,23 @@
 
 1. 选择一个游戏
     </markdown>
+    <h5 id="example1" class="pt20">例子1</h5>
     <auto-complete placeholder="请输入游戏ID或名称" :list="aclist"
       :keys="['Name', 'Id', 'Code']" :matchKeys="['Name', 'Id', 'Code']"
       :showKeys="['Name', 'Id', 'Code']" @change="setScopeId" autoClear></auto-complete>
+      <div></div>
+      <code-snippet>
+        &lt;auto-complete placeholder="请输入游戏ID或名称" :list="aclist"
+          :keys="['Name', 'Id', 'Code']" :matchKeys="['Name', 'Id', 'Code']"
+          :showKeys="['Name', 'Id', 'Code']" @change="setScopeId" autoClear&gt;&lt;/auto-complete&gt;
+      </code-snippet>
   </div>
 </template>
 
 <script>
 import AutoComplete from 'ct-adc-auto-complete';
 import Markdown from 'common/markdown';
+import CodeSnippet from 'common/code-snippet';
 export default {
     data() {
         return {
@@ -56,7 +64,8 @@ export default {
     },
     components: {
         AutoComplete,
-        Markdown
+        Markdown,
+        CodeSnippet
     },
     methods: {
         setScopeId() {}

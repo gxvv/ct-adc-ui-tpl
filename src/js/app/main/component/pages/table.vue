@@ -46,17 +46,29 @@
         <adc-table-column prop="Data" name="Data"></adc-table-column>
         <adc-table-column prop="Status" name="Status"></adc-table-column>
     </adc-table>
+
+    <code-snippet>
+        &lt;adc-table :data="list.data" :status="list.status" :msg="list.msg" :loading="list.loading"&gt;
+            &lt;adc-table-column prop="Id" name="ID"&gt;&lt;/adc-table-column&gt;
+            &lt;adc-table-column prop="Name" name="Name" :filter="scope"&gt;&lt;/adc-table-column&gt;
+            &lt;adc-table-column prop="Data" name="Data"&gt;&lt;/adc-table-column&gt;
+            &lt;adc-table-column prop="Status" name="Status"&gt;&lt;/adc-table-column&gt;
+        &lt;/adc-table&gt;
+    </code-snippet>
+
 </div></template>
 
 <script>
 import List from 'ct-adc-list';
 import Markdown from 'common/markdown';
+import CodeSnippet from 'common/code-snippet';
 
 export default {
     components: {
         'adc-table': List['adc-table'],
         'adc-table-column': List['adc-table-column'],
-        Markdown
+        Markdown,
+        CodeSnippet
     },
     data() {
         return {

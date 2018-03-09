@@ -1,5 +1,8 @@
 <template lang="html">
     <div>
+      <h1 class="page-header">弱提示</h1>
+      <p></p>
+      <h3>UI规范</h3>
         <div>
           <markdown>
             弱提示用于页面内的操作反馈，一般用于重要级别较低的信息通知
@@ -30,22 +33,30 @@
           </markdown>
         </div>
 
-        <h5>例子</h5>
+        <h5>例子1</h5>
         <blockquote>
-            点击查看
+            点击查看效果
         </blockquote>
         <button type="button" class="btn btn-sm btn-info" @click="showMiniMsg('info')">提示</button>
         <button type="button" class="btn btn-sm btn-success" @click="showMiniMsg('success')">成功</button>
         <button type="button" class="btn btn-sm btn-warning" @click="showMiniMsg('warning')">警告</button>
         <button type="button" class="btn btn-sm btn-danger" @click="showMiniMsg('error')">失败</button>
+        <code-snippet>
+          &lt;button type="button" class="btn btn-sm btn-info" @click="showMiniMsg('info')"&gt;提示&lt;/button&gt;
+          &lt;button type="button" class="btn btn-sm btn-success" @click="showMiniMsg('success')"&gt;成功&lt;/button&gt;
+          &lt;button type="button" class="btn btn-sm btn-warning" @click="showMiniMsg('warning')"&gt;警告&lt;/button&gt;
+          &lt;button type="button" class="btn btn-sm btn-danger" @click="showMiniMsg('error')"&gt;失败&lt;/button&gt;
+        </code-snippet>
     </div>
 </template>
 
 <script>
 import Markdown from 'common/markdown';
+import CodeSnippet from 'common/code-snippet';
 export default {
     components: {
-        Markdown
+        Markdown,
+        CodeSnippet
     },
     methods: {
         showMiniMsg(type) {

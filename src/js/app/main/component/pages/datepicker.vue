@@ -28,17 +28,26 @@
 
 1. 表单中的日期/时间[组]的编辑
   </markdown>
+  <h5 id="example1" class="pt20">例子1</h5>
   <dates related :begin-ops="{dateFormat: 'yyyy-MM-dd'}" :end-ops="{dateFormat: 'yyyy-MM-dd'}"
     begin-placeholder="开始时间" end-placeholder="结束时间" ref="dates" @change="updateTime" :initialEndDate="EndDate" :initialBeginDate="BeginDate"></dates>
+  <div>
+    <code-snippet>
+    &lt;dates related :begin-ops="{dateFormat: 'yyyy-MM-dd'}" :end-ops="{dateFormat: 'yyyy-MM-dd'}"
+      begin-placeholder="开始时间" end-placeholder="结束时间" ref="dates" @change="updateTime" :initialEndDate="EndDate" :initialBeginDate="BeginDate"&gt;&lt;/dates&gt;
+      </code-snippet>
+  </div>
 </div>
 </template>
 
 <script>
 import form from 'ct-adc-form';
 import Markdown from 'common/markdown';
+import CodeSnippet from 'common/code-snippet';
 export default {
     components: {
         Markdown,
+        CodeSnippet,
         dates: form.DatesInput
     },
     data() {
