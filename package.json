@@ -10,7 +10,7 @@
     "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
-    "ct-adc-auto-complete": "^2.0.2",
+    "ct-adc-auto-complete": "^2.1.0",
     "ct-adc-form": "^2.2.0",
     "ct-adc-list": "^3.0.0",
     "ct-adc-page": "^1.0.1",

@@ -1,7 +1,50 @@
 <template lang="html">
   <div>
       <h1 class="page-header">布局</h1>
-      <h2></h2>
+      <markdown>
+### 释义
+
+页面架构定义了页面布局，系统中的页面分布和页面间的跳转等内容
+
+### 范围
+
+页面架构包含但不限于页面布局、页面尺寸等
+
+---
+
+### 立体空间
+
+![](/assets/页面架构.png)
+
+### 栅格化
+
+页面布局遵循栅格化(bootstrap支持)
+
+---
+
+### 页面尺寸
+
+正常情况下，页面被嵌入到宽度为**1172px**的框架内部，页面布局时需要考虑在该宽度下页面能够较好显示。
+
+**备注: ** **1172px**为公司通用电脑下chrome中显示的尺寸，会根据浏览器和系统有小范围的误差。
+
+### 控件尺寸
+
+页面元素的通用尺寸：bootstrap中的尺寸级别sm(small)；
+但这并不意味着所有的元素，比如你可能需要比通用更大一号的尺寸，比如导航区域的内容。
+
+![](/assets/size.png)
+
+**按钮参考高度**
+
+当按钮中字体为12px时，在mac chrome中的按钮的高度:
+
+**xs:** 22px
+**sm:** 30px
+**def:** 34px
+**lg:** 46px
+
+      </markdown>
       <div><p>
           <blockquote>
               <a href="javascript:;" class="clip" data-target="#id1">
@@ -56,7 +99,12 @@
 </template>
 
 <script>
+import Markdown from 'common/markdown';
+
 export default {
+    components: {
+        Markdown
+    },
     mounted() {
         const {hljs} = window;
 

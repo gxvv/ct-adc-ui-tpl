@@ -103,3 +103,37 @@ body {
   display: inline-block;
   border-radius: 50%;
 }
+
+.highlight {
+  padding: 9px 14px;
+  margin-bottom: 14px;
+  background-color: #f7f7f9;
+  border: 1px solid #e1e1e8;
+  border-radius: 4px;
+}
+.highlight pre {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  word-break: normal;
+  white-space: nowrap;
+  background-color: transparent;
+  border: 0;
+  max-height: 200px;
+}
+.highlight pre code {
+  font-size: inherit;
+  color: #333; /* Effectively the base text color */
+}
+.highlight pre code:first-child {
+  display: inline-block;
+  padding-right: 45px;
+}
+
+.clip-b {
+  height: 25px;
+  line-height: 25px;
+  padding: 0 10px;
+  font-size: 16px;
+  margin: 10px 0 5px;
+}
