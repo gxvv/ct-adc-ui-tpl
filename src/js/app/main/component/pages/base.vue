@@ -14,7 +14,7 @@
 
 ### 立体空间
 
-![](/assets/页面架构.png)
+![](../asset/images/页面架构.png)
 
 ### 栅格化
 
@@ -33,7 +33,7 @@
 页面元素的通用尺寸：bootstrap中的尺寸级别sm(small)；
 但这并不意味着所有的元素，比如你可能需要比通用更大一号的尺寸，比如导航区域的内容。
 
-![](/assets/size.png)
+![](../asset/images/size.png)
 
 **按钮参考高度**
 
