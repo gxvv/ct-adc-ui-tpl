@@ -1,42 +1,18 @@
 <template lang="html">
-<div>
-  <h1 class="page-header">时间选择组件</h1>
-  <p>时间选择组件</p>
-  <h3>UI规范</h3>
-  <markdown>
-    date/time选择器用于所有需要日期/时间的编辑的情况
+<div class="page-container">
+    <ds pt2="时间日期选择组件" desc="选择时间日期" />
+    <ds pt3="何时使用" desc="搜索时需要根据时间筛选等情况" />
 
-### 应用范围
-
-**是:** 所有可以编辑日期/时间的情况
-
-### 细节说明
-
-**格式约束:** 保证结果是合法的日期格式
-
-**清空:** 用户可清空选择的内容
-
-### 统一交互
-
-参照`信息展示 - 格式`中关于日期的说明
-
-### 组件地址
-
-[github](https://github.com/ct-adc/adc-form/blob/master/src/date/readme.md)
-
-### 使用场景
-
-1. 表单中的日期/时间[组]的编辑
-  </markdown>
-  <h5 id="example1" class="pt20">例子1</h5>
-  <dates related :begin-ops="{dateFormat: 'yyyy-MM-dd'}" :end-ops="{dateFormat: 'yyyy-MM-dd'}"
-    begin-placeholder="开始时间" end-placeholder="结束时间" ref="dates" @change="updateTime" :initialEndDate="EndDate" :initialBeginDate="BeginDate"></dates>
-  <div>
-    <code-snippet>
+    <demo title="基本用法" desc="选择日期">
+          <dates slot="source" related :begin-ops="{dateFormat: 'yyyy-MM-dd'}" :end-ops="{dateFormat: 'yyyy-MM-dd'}" begin-placeholder="开始时间" end-placeholder="结束时间" ref="dates" @change="updateTime" :initialEndDate="EndDate" :initialBeginDate="BeginDate"></dates>
+    <code-snippet slot="code">
     &lt;dates related :begin-ops="{dateFormat: 'yyyy-MM-dd'}" :end-ops="{dateFormat: 'yyyy-MM-dd'}"
       begin-placeholder="开始时间" end-placeholder="结束时间" ref="dates" @change="updateTime" :initialEndDate="EndDate" :initialBeginDate="BeginDate"&gt;&lt;/dates&gt;
       </code-snippet>
-  </div>
+    </demo>
+    
+    <api name="Date" :attrs="attrs1" :events="events1" :methods="methods1" />
+    <api name="Dates" :attrs="attrs2" :events="events2" :methods="methods2" />
 </div>
 </template>
 
@@ -53,7 +29,29 @@ export default {
     data() {
         return {
             EndDate: $.now(),
-            BeginDate: $.now() - 30 * 24 * 36 * 1e5
+            BeginDate: $.now() - 30 * 24 * 36 * 1e5,
+            attrs1: [
+                {name: 'initialDate', desc: '开始日期初始值', type: 'String/Number', default: '-', all: '-'},
+                {name: 'disabled', desc: '是否将日期控件处于禁用状态', type: 'Boolean', default: false, all: '-'},
+                {name: 'ops', desc: '日期的配置项', type: 'Object', default: '{type:"date"...}详见备注', all: '-'}
+            ],
+            methods1: [
+                {name: 'getDate', desc: '用于单一日期组件，获取当前的日期', params: 'readable 是否返回格式化的日期，如果为false，则返回时间戳', rt: '选择的日期'}
+            ],
+            methods2: [
+                {name: 'getDates', desc: '用于单一日期组件，获取当前的日期', params: 'readable,endTransfered ', rt: '选择的日期'}
+            ],
+            attrs2: [
+                {name: 'initialBeginDate', desc: '始日期初始值(可以是符合格式的日期或者时间戳)', type: 'String/Number', default: '-', all: '-'},
+                {name: 'beginPlaceholder', desc: '开始日期的placeholder', type: 'String', default: '请选择', all: '-'},
+                {name: 'beginOps', desc: '开始日期的配置项', type: 'Object', default: '{type:"date"...}详见备注', all: '-'},
+                {name: 'beginDisabled', desc: '是否将开始日期控件处于禁用状态', type: 'Boolean', default: false, all: '-'},
+                {name: 'initialEndDate', desc: '结束日期初始值(可以是符合格式的日期或者时间戳)', type: 'String/Number', default: '-', all: '-'},
+                {name: 'endPlaceholder', desc: '结束日期的placeholder', type: 'String', default: '请选择', all: '-'},
+                {name: 'endOps', desc: '结束日期的配置项', type: 'Object', default: '{type:"date"...}详见备注', all: '-'},
+                {name: 'endDisabled', desc: '是否将结束日期控件处于禁用状态', type: 'Boolean', default: false, all: '-'},
+                {name: 'related', desc: '开始结束日期是否要联动', type: 'Boolean', default: false, all: '-'}
+            ]
         };
     },
     methods: {
@@ -63,6 +61,3 @@ export default {
     }
 };
 </script>
-
-<style lang="css">
-</style>

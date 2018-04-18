@@ -1,67 +1,145 @@
-<template lang="html"><div>
-    <h1 class="page-header">列表组件</h1>
-    <p>通用型列表组件。应用于所有数据表的展示。</p>
-    <h3>UI规范</h3>
-    <markdown>
-      表格用于展现特性相同的一组数据
+<template lang="html">
+    <div class="page-container">
 
-### 应用范围
+        <ds pt2="列表" desc="用于展示多条结构类似的数据"/>
 
-**是:** 数据属性相同，每项之间为并列关系，无逻辑包含
+        <demo title="基本用法" desc="展现一个普通的列表">
+            <adc-table :data="list.data" :status="list.status" :msg="list.msg" :loading="list.loading" slot="source">
+                <adc-table-column prop="Id" name="ID"></adc-table-column>
+                <adc-table-column prop="Name" name="Name"></adc-table-column>
+                <adc-table-column prop="Data" name="Data"></adc-table-column>
+                <adc-table-column prop="Status" name="Status"></adc-table-column>
+            </adc-table>
+            <code-snippet slot="code">
+                &lt;adc-table :data="list.data" :status="list.status" :msg="list.msg" :loading="list.loading"&gt;
+                    &lt;adc-table-column prop="Id" name="ID"&gt;&lt;/adc-table-column&gt;
+                    &lt;adc-table-column prop="Name" name="Name"&gt;&lt;/adc-table-column&gt;
+                    &lt;adc-table-column prop="Data" name="Data"&gt;&lt;/adc-table-column&gt;
+                    &lt;adc-table-column prop="Status" name="Status"&gt;&lt;/adc-table-column&gt;
+                &lt;/adc-table&gt;
+                &lt;script&gt;
+                    import List from 'ct-adc-list';
+                    export default {
+                        components: {
+                            'adc-table': List['adc-table'],
+                            'adc-table-column': List['adc-table-column'],
+                            Markdown,
+                            CodeSnippet
+                        },
+                        data() {
+                            return {
+                                list: {
+                                    data: [
+                                        { Id: 1, Name: '物品1', Data: '数据', Status: 1 },
+                                        { Id: 2, Name: '物品2', Data: '数据', Status: 2 },
+                                        { Id: 3, Name: '物品3', Data: '数据', Status: 3 }
+                                    ],
+                                    status: true,
+                                    msg: '',
+                                    loading: false
+                                }
+                            };
+                        }
+                    };
+                &lt;script&gt;
+            </code-snippet>
+        </demo>
 
-**不是:** 不适用于关系复杂，相互之间有关联的数据表现
+        <demo title="没有数据" desc="没有数据，接口读取错误等情况导致无数据展示时，可以自定义显示的消息">
+            <adc-table :data="list1.data" :status="list1.status" :msg="list1.msg" :loading="list1.loading" slot="source">
+                    <adc-table-column prop="Id" name="ID"></adc-table-column>
+                    <adc-table-column prop="Name" name="Name"></adc-table-column>
+                    <adc-table-column prop="Data" name="Data"></adc-table-column>
+                    <adc-table-column prop="Status" name="Status"></adc-table-column>
+                </adc-table>
+            <code-snippet slot="code">
+                    &lt;adc-table :data="list.data" :status="list.status" :msg="list.msg" :loading="list.loading"&gt;
+                        &lt;adc-table-column prop="Id" name="ID"&gt;&lt;/adc-table-column&gt;
+                        &lt;adc-table-column prop="Name" name="Name"&gt;&lt;/adc-table-column&gt;
+                        &lt;adc-table-column prop="Data" name="Data"&gt;&lt;/adc-table-column&gt;
+                        &lt;adc-table-column prop="Status" name="Status"&gt;&lt;/adc-table-column&gt;
+                    &lt;/adc-table&gt;
+                    &lt;script&gt;
+                        import List from 'ct-adc-list';
+                        export default {
+                            components: {
+                                'adc-table': List['adc-table'],
+                                'adc-table-column': List['adc-table-column'],
+                                Markdown,
+                                CodeSnippet
+                            },
+                            data() {
+                                return {
+                                    list1: {
+                                        data: [],
+                                        status: true,
+                                        msg: '暂无数据',
+                                        loading: false
+                                    }
+                                };
+                            }
+                        };
+                    &lt;script&gt;
+                </code-snippet>
+        </demo>
 
-### 细节描述
+        <demo title="自定义操作" desc="加入编辑、删除等操作">
+            <adc-table :data="list2.data" :status="list2.status" :msg="list2.msg" :loading="list2.loading" slot="source">
+                    <adc-table-column prop="Id" name="ID"></adc-table-column>
+                    <adc-table-column prop="Name" name="Name"></adc-table-column>
+                    <adc-table-column prop="Data" name="Data"></adc-table-column>
+                    <adc-table-column prop="Status" name="Status"></adc-table-column>
+                    <adc-table-column name="操作" :vm="list2.vm.operation" width="100"></adc-table-column>
+                </adc-table>
+            <code-snippet slot="code">
+                    &lt;adc-table :data="list.data" :status="list.status" :msg="list.msg" :loading="list.loading"&gt;
+                        &lt;adc-table-column prop="Id" name="ID"&gt;&lt;/adc-table-column&gt;
+                        &lt;adc-table-column prop="Name" name="Name"&gt;&lt;/adc-table-column&gt;
+                        &lt;adc-table-column prop="Data" name="Data"&gt;&lt;/adc-table-column&gt;
+                        &lt;adc-table-column prop="Status" name="Status"&gt;&lt;/adc-table-column&gt;
+                        &lt;adc-table-column name="操作" width="100"&gt;&lt;/adc-table-column&gt;
+                    &lt;/adc-table&gt;
+                    &lt;script&gt;
+                        import List from 'ct-adc-list';
+                        export default {
+                            components: {
+                                'adc-table': List['adc-table'],
+                                'adc-table-column': List['adc-table-column'],
+                                Markdown,
+                                CodeSnippet
+                            },
+                            data() {
+                                return {
+                                    list2: {
+                                        data: [
+                                            { Id: 1, Name: '物品1', Data: '数据', Status: 1 },
+                                            { Id: 2, Name: '物品2', Data: '数据', Status: 2 },
+                                            { Id: 3, Name: '物品3', Data: '数据', Status: 3 }
+                                        ],
+                                        status: true,
+                                        msg: '暂无数据',
+                                        loading: false
+                                    }
+                                };
+                            }
+                        };
+                    &lt;script&gt;
+                </code-snippet>
+        </demo>
 
-**状态:** 表格一般有加载中、加载成功、加载失败、无数据四种状态
-
-**展示:** 表格中总是有不同的信息格式，需按照信息的类别进行展示。
-如日期、状态、图片等，请参考`信息展示 - 格式`与`通用控件 - 图片`中的相关说明；
-链接可以根据情况渲染为可点击的链接，而非一个url地址 根据业务方要求，可以直接显示url地址
-
-**列宽:** 必要时，请根据表格的列添加colgroup进行列宽调整，页面的展示宽度参考`页面架构 - 页面尺寸`中的说明
-
-**操作列:** 操作列尽量在一行展示，避免换行。其中的按钮大小一致，颜色请遵循`通用控件 - 按钮`中的说明，可以视情况修改颜色以区分（如两个绿色按钮挨在一起）
-
-**表格附加信息:** 当页面中含有多表格展示时，请给每个表格加上标题；当表格中数据统计信息时，请放置在表格的上方
-
-### 统一交互
-
-**内容放置:** 垂直方向：表格中的内容统一垂直居中；水平方向：图片水平居中，文字等其他内容靠左对齐
-
-### 组件地址
-
-[github](https://github.com/ct-adc/adc-list)
-
-### 使用场景
-
-1. 首页数据列表
-
-
-    </markdown>
-    <h5 id="example1" class="pt20">例子1</h5>
-    <adc-table :data="list.data" :status="list.status" :msg="list.msg" :loading="list.loading">
-        <adc-table-column prop="Id" name="ID"></adc-table-column>
-        <adc-table-column prop="Name" name="Name" :filter="scope"></adc-table-column>
-        <adc-table-column prop="Data" name="Data"></adc-table-column>
-        <adc-table-column prop="Status" name="Status"></adc-table-column>
-    </adc-table>
-
-    <code-snippet>
-        &lt;adc-table :data="list.data" :status="list.status" :msg="list.msg" :loading="list.loading"&gt;
-            &lt;adc-table-column prop="Id" name="ID"&gt;&lt;/adc-table-column&gt;
-            &lt;adc-table-column prop="Name" name="Name" :filter="scope"&gt;&lt;/adc-table-column&gt;
-            &lt;adc-table-column prop="Data" name="Data"&gt;&lt;/adc-table-column&gt;
-            &lt;adc-table-column prop="Status" name="Status"&gt;&lt;/adc-table-column&gt;
-        &lt;/adc-table&gt;
-    </code-snippet>
-
-</div></template>
+        <api name="Table" :attrs="attrs1" :methods="methods1"/>
+        <api name="Table-column" :attrs="attrs2" />
+    </div>
+</template>
 
 <script>
+import Vue from 'vue';
 import List from 'ct-adc-list';
 import Markdown from 'common/markdown';
 import CodeSnippet from 'common/code-snippet';
+import button2 from '../components/table-button';
+
+Vue.component('button2', button2);
 
 export default {
     components: {
@@ -72,22 +150,143 @@ export default {
     },
     data() {
         return {
+            btn1: true,
             list: {
                 data: [
                     { Id: 1, Name: '物品1', Data: '数据', Status: 1 },
                     { Id: 2, Name: '物品2', Data: '数据', Status: 2 },
-                    { Id: 3, Name: '物品3', Data: '数据', Status: 3 },
-                    { Id: 4, Name: '物品4', Data: '数据', Status: 4 },
-                    { Id: 5, Name: '物品5', Data: '数据', Status: 5 }
+                    { Id: 3, Name: '物品3', Data: '数据', Status: 3 }
                 ],
                 status: true,
                 msg: '',
                 loading: false
-            }
+            },
+            list1: {
+                data: [],
+                status: true,
+                msg: '暂无数据',
+                loading: false
+            },
+            list2: {
+                data: [
+                    { Id: 1, Name: '物品1', Data: '数据', Status: 1 },
+                    { Id: 2, Name: '物品2', Data: '数据', Status: 2 },
+                    { Id: 3, Name: '物品3', Data: '数据', Status: 3 }
+                ],
+                status: true,
+                msg: '',
+                loading: false,
+                vm: {
+                    operation: {
+                        name: 'button2'
+                    }
+                }
+            },
+            methods1: [{
+                name: 'getChecked',
+                params: '-',
+                desc: '获取选中项',
+                rt: '{allChecked: true, checked: []}'
+            }],
+            attrs1: [{
+                name: 'data',
+                desc: '用来渲染表格的数据',
+                type: 'Array',
+                default: '[]',
+                all: '-'
+            }, {
+                name: 'initialAllChecked',
+                desc: '是否要全选数据 (当含有type为selection的列时可用)',
+                type: 'Boolean',
+                default: false,
+                all: '-'
+            }, {
+                name: 'initialChecked',
+                desc: '要选中的数据的索引集合 (当含有type为selection的列时可用)',
+                type: 'Array',
+                default: '[]',
+                all: '-'
+            }, {
+                name: 'loading',
+                desc: '加载状态',
+                type: 'Boolean',
+                default: false,
+                all: '-'
+            }, {
+                name: 'status',
+                desc: '表格数据响应状态(成功/失败)',
+                type: 'Boolean',
+                default: true,
+                all: '-'
+            }, {
+                name: 'msg',
+                desc: '显示信息(status为true时为提示信息(如"请点击搜索按钮"),status为false时为出错信息(如"请求失败"))',
+                type: 'String',
+                default: '""',
+                all: '-'
+            }],
+            attrs2: [{
+                name: 'type',
+                desc: '数据被渲染为什么类型',
+                type: 'String',
+                default: '-',
+                all: '-'
+            }, {
+                name: 'prop',
+                desc: '对应的字段名',
+                type: 'String',
+                default: '-',
+                all: '-'
+            }, {
+                name: 'name',
+                desc: '表头显示名称',
+                type: 'String',
+                default: '-',
+                all: '-'
+            }, {
+                name: 'width',
+                desc: '列宽',
+                type: 'String',
+                default: '-',
+                all: '-'
+            }, {
+                name: 'vm',
+                desc: '自定义组件的配置',
+                type: 'plain Object',
+                default: '{name:"", config:{}}',
+                all: '-'
+            }, {
+                name: 'visible',
+                desc: '该列是否可见（为方法时取决于返回值,当为function时详见下方说明）',
+                type: 'Boolean/Function',
+                default: true,
+                all: '-'
+            }, {
+                name: 'filter',
+                desc: '过滤器(为字符串时会到Vue的公用filters中获取方法,当为function时详见下方说明',
+                type: 'String/Function',
+                default: '-',
+                all: '-'
+            }, {
+                name: 'className',
+                desc: '设置单元格td的class(当为function时详见下方说明)',
+                type: 'String/Function/Array',
+                default: '-',
+                all: '-'
+            }, {
+                name: 'mapper',
+                desc: '映射(将数据通过映射转换为显示内容(比如将数字1显示为"已启用"))',
+                type: 'Array',
+                default: '[]',
+                all: '-'
+            }, {
+                name: 'ashtml',
+                desc: '是否将内容渲染为html',
+                type: 'Boolean',
+                default: false,
+                all: '-'
+            }]
         };
     }
 };
 </script>
-
-<style lang="css">
-</style>

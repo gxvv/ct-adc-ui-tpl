@@ -1,43 +1,21 @@
 <template lang="html">
-  <div>
-    <h1 class="page-header">分页组件</h1>
-    <p>通用型分页组件。</p>
-    <h3>UI规范</h3>
-    <markdown>
-      当信息量比较大时，采用分页加载的方式，便于用户快速查看
-
-### 应用范围
-
-**是:** 需要分页显示的信息都可以使用翻页
-
-**不是:** 是否跳转不是必选功能，在内容较少时可以不添加该功能
-
-### 细节说明
-
-页码需要给出明确的信息总量提示，明确用户的位置，给予用户便捷的操作
-
-**基于位置:** 向用户显示他们在产品的哪一个页面，以及共多少个页面
-
-**基于路径:** 显示用户到达前一页、后一页、或某个特定页面的跳转步骤
-
-### 组件地址
-
-[github](https://github.com/ct-adc/adc-page)
-    </markdown>
-    <h5 id="example1" class="pt20">例子1</h5>
-
-    <div class="clearfix"><page form
-          :curr-page="pageCfg.pageIndex"
-          :page-len="pageCfg.pageSize"
-          :total-num="pageCfg.count" @change-page="changePage"></page></div>
-    <div>
-      <code-snippet>
+  <div class="page-container">
+      <ds pt2="分页" desc="分页组件"/>
+      <ds pt3="何时使用" desc="展现数据，跟表格结合" />
+    
+    <demo title="基本用法" desc="基本分页">
+        <page form
+        :curr-page="pageCfg.pageIndex"
+        :page-len="pageCfg.pageSize"
+        :total-num="pageCfg.count" @change-page="changePage" slot="source" class="clearfix"></page>
+      <code-snippet slot="code">
         &lt;page form
               :curr-page="pageCfg.pageIndex"
               :page-len="pageCfg.pageSize"
               :total-num="pageCfg.count" @change-page="changePage"&gt;&lt;/page&gt;
       </code-snippet>
-    </div>
+    </demo>
+    <api :attrs="attrs" :events="events" :methods="methods" />
   </div>
 </template>
 
@@ -57,7 +35,22 @@ export default {
                 pageIndex: 1,
                 count: 200,
                 pageSize: 20
-            }
+            },
+            attrs: [
+                {name: 'currPage', desc: '当前页', type: 'Number', default: 1, all: '-'},
+                {name: 'pageLen', desc: '每页数量', type: 'Number', default: 10, all: '-'},
+                {name: 'totalNum', desc: '记录总数', type: 'Number', default: 1000, all: '-'},
+                {name: 'form', desc: '是否显示跳转', type: 'Boolean', default: false, all: '-'},
+                {name: 'spage', desc: '页面几页后省略', type: 'Number', default: 5, all: '-'},
+                {name: 'topPage', desc: '省略号前显示页数', type: 'Number', default: 1, all: '-'},
+                {name: 'afterPage', desc: '省略号后显示页数', type: 'Number', default: 1, all: '-'}
+            ],
+            events: [
+                {name: 'change-page', params: 'page,当前页改变 ', desc: '前页发生变化时，发生该事件'}
+            ],
+            methods: [
+                {name: 'setPage', params: 'page', desc: '要翻到哪一页', rt: '-'}
+            ]
         };
     },
     methods: {

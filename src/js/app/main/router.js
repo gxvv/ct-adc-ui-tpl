@@ -13,6 +13,13 @@ import DatePicker from './component/pages/datepicker.vue';
 import Table from './component/pages/table.vue';
 import Template1 from './component/pages/template1.vue';
 import Template1Detail from './component/modules/detail.vue';
+import SlideOut from './component/pages/slideout.vue';
+import Loading from './component/pages/loading.vue';
+import Transfers from './component/pages/transfers.vue';
+import Area from './component/pages/area.vue';
+import Uploader from './component/pages/uploader.vue';
+import Textarea from './component/pages/textarea.vue';
+
 import VueRouter from 'vue-router';
 export default new VueRouter({
     routes: [
@@ -75,6 +82,24 @@ export default new VueRouter({
             {
                 path: 'template1/detail/:id',
                 component: Template1Detail
+            }, {
+                path: 'slideOut',
+                component: SlideOut
+            }, {
+                path: 'loading',
+                component: Loading
+            }, {
+                path: 'transfers',
+                component: Transfers
+            }, {
+                path: 'area',
+                component: Area
+            }, {
+                path: 'uploader',
+                component: Uploader
+            }, {
+                path: 'textarea',
+                component: Textarea
             }]
         }
     ]

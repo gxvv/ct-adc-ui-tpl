@@ -1,100 +1,70 @@
 <template lang="html">
-  <div>
-      <h1 class="page-header">布局</h1>
-      <markdown>
-### 释义
+  <div class="page-container">
+        <ds pt2="Layout 布局">
+            <p slot="desc">遵循栅格化，详见<a href="https://v3.bootcss.com/css/#grid" target="_blank">bootstrap</a></p>
+        </ds>
+        <ds pt3="页面尺寸" desc="正常情况下，页面被嵌入到宽度为1172px的框架内部，页面布局时需要考虑在该宽度下页面能够较好显示。备注: 1172px为公司通用电脑下chrome中显示的尺寸，会根据浏览器和系统有小范围的误差。" />
+        <ds pt3="控件尺寸" desc="页面元素的通用尺寸：bootstrap中的尺寸级别sm(small)；但这并不意味着所有的元素，比如你可能需要比通用更大一号的尺寸，比如导航区域的内容。" />
 
-页面架构定义了页面布局，系统中的页面分布和页面间的跳转等内容
-
-### 范围
-
-页面架构包含但不限于页面布局、页面尺寸等
-
----
-
-### 立体空间
-
-![](../asset/images/页面架构.png)
-
-### 栅格化
-
-页面布局遵循栅格化(bootstrap支持)
-
----
-
-### 页面尺寸
-
-正常情况下，页面被嵌入到宽度为**1172px**的框架内部，页面布局时需要考虑在该宽度下页面能够较好显示。
-
-**备注: ** **1172px**为公司通用电脑下chrome中显示的尺寸，会根据浏览器和系统有小范围的误差。
-
-### 控件尺寸
-
-页面元素的通用尺寸：bootstrap中的尺寸级别sm(small)；
-但这并不意味着所有的元素，比如你可能需要比通用更大一号的尺寸，比如导航区域的内容。
-
-![](../asset/images/size.png)
-
-**按钮参考高度**
-
-当按钮中字体为12px时，在mac chrome中的按钮的高度:
-
-**xs:** 22px
-**sm:** 30px
-**def:** 34px
-**lg:** 46px
-
-      </markdown>
-      <div><p>
-          <blockquote>
-              <a href="javascript:;" class="clip" data-target="#id1">
-                复制代码
-              </a>
-          </blockquote>
-          <pre><code class="html" id="id1">
-              &lt;div class="container-fluid"&gt;&lt;/div&gt;
-            </code></pre>
-      </p>
-
-      <div class="row text-center">
-          <div class="col-xs-2">
-            <blockquote>
-                上边距5像素
-            </blockquote>
-            <span class="csscode" id="id2">.pt5</span>
-            <a href="javascript:;" class="clip" data-target="#id2">
-              复制
-            </a>
-          </div>
-          <div class="col-xs-2">
-            <blockquote>
-                右边距5像素
-            </blockquote>
-            <span class="csscode" id="id3">.pr5</span>
-            <a href="javascript:;" class="clip" data-target="#id3">
-              复制
-            </a>
-          </div>
-          <div class="col-xs-2">
-            <blockquote>
-                下边距5像素
-            </blockquote>
-            <span class="csscode" id="id4">.pb5</span>
-            <a href="javascript:;" class="clip" data-target="#id4">
-              复制
-            </a>
-          </div>
-          <div class="col-xs-2">
-            <blockquote>
-                左边距5像素
-            </blockquote>
-            <span class="csscode" id="id5">.pl5</span>
-            <a href="javascript:;" class="clip" data-target="#id5">
-              复制
-            </a>
-          </div>
-      </div>
-      </div>
+        <demo title="基本布局">
+            <p slot="desc">12列、6列、2列，使用<code>col-*</code>类进行布局</p>
+            <div slot="source" class="showgrid">
+                <div class="row">
+                    <div class="col-md-1">.col-md-1</div>
+                    <div class="col-md-1">.col-md-1</div>
+                    <div class="col-md-1">.col-md-1</div>
+                    <div class="col-md-1">.col-md-1</div>
+                    <div class="col-md-1">.col-md-1</div>
+                    <div class="col-md-1">.col-md-1</div>
+                    <div class="col-md-1">.col-md-1</div>
+                    <div class="col-md-1">.col-md-1</div>
+                    <div class="col-md-1">.col-md-1</div>
+                    <div class="col-md-1">.col-md-1</div>
+                    <div class="col-md-1">.col-md-1</div>
+                    <div class="col-md-1">.col-md-1</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">.col-md-2</div>
+                    <div class="col-md-2">.col-md-2</div>
+                    <div class="col-md-2">.col-md-2</div>
+                    <div class="col-md-2">.col-md-2</div>
+                    <div class="col-md-2">.col-md-2</div>
+                    <div class="col-md-2">.col-md-2</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">.col-md-6</div>
+                    <div class="col-md-6">.col-md-6</div>
+                </div>
+            </div>
+            <code-snippet slot="code">
+                &lt;div class="row"&gt;
+                    &lt;div class="col-md-1"&gt;.col-md-1&lt;/div&gt;
+                    &lt;div class="col-md-1"&gt;.col-md-1&lt;/div&gt;
+                    &lt;div class="col-md-1"&gt;.col-md-1&lt;/div&gt;
+                    &lt;div class="col-md-1"&gt;.col-md-1&lt;/div&gt;
+                    &lt;div class="col-md-1"&gt;.col-md-1&lt;/div&gt;
+                    &lt;div class="col-md-1"&gt;.col-md-1&lt;/div&gt;
+                    &lt;div class="col-md-1"&gt;.col-md-1&lt;/div&gt;
+                    &lt;div class="col-md-1"&gt;.col-md-1&lt;/div&gt;
+                    &lt;div class="col-md-1"&gt;.col-md-1&lt;/div&gt;
+                    &lt;div class="col-md-1"&gt;.col-md-1&lt;/div&gt;
+                    &lt;div class="col-md-1"&gt;.col-md-1&lt;/div&gt;
+                    &lt;div class="col-md-1"&gt;.col-md-1&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="row"&gt;
+                    &lt;div class="col-md-2"&gt;.col-md-2&lt;/div&gt;
+                    &lt;div class="col-md-2"&gt;.col-md-2&lt;/div&gt;
+                    &lt;div class="col-md-2"&gt;.col-md-2&lt;/div&gt;
+                    &lt;div class="col-md-2"&gt;.col-md-2&lt;/div&gt;
+                    &lt;div class="col-md-2"&gt;.col-md-2&lt;/div&gt;
+                    &lt;div class="col-md-2"&gt;.col-md-2&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="row"&gt;
+                    &lt;div class="col-md-6"&gt;.col-md-6&lt;/div&gt;
+                    &lt;div class="col-md-6"&gt;.col-md-6&lt;/div&gt;
+                &lt;/div&gt;
+            </code-snippet>
+        </demo>
   </div>
 </template>
 
@@ -127,5 +97,13 @@ export default {
 };
 </script>
 
-<style lang="css">
+<style lang="css" scoped>
+    .showgrid [class^=col-]{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-color: #eee;
+        background-color: rgba(86,61,124,.15);
+        border: 1px solid #ddd;
+        border: 1px solid rgba(86,61,124,.2);
+    }
 </style>

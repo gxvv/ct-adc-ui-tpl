@@ -10,10 +10,16 @@
     "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
+    "ct-adc-area-selector": "^1.2.0",
     "ct-adc-auto-complete": "^2.1.0",
     "ct-adc-form": "^2.2.0",
     "ct-adc-list": "^3.0.0",
+    "ct-adc-loading": "^1.0.0-alpha.3",
     "ct-adc-page": "^1.0.1",
+    "ct-adc-slideout": "^1.1.6",
+    "ct-adc-textarea": "^2.0.0-alpha.1",
+    "ct-adc-transfers": "^2.0.0",
+    "ct-adc-uploader": "^1.0.0-alpha.1",
     "highlight.js": "github:isagalaev/highlight.js",
     "marked": "^0.3.7",
     "vue": "^2.2.1",
