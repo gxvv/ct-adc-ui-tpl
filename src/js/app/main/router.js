@@ -4,6 +4,7 @@ import Base from './component/pages/base.vue';
 import DesignStyle from './component/pages/designstyle.vue';
 import Button from './component/pages/button.vue';
 import Font from './component/pages/font.vue';
+import Tt from './component/pages/text.vue';
 import Search from './component/pages/search.vue';
 import AutoComplete from './component/pages/autocomplete.vue';
 import Pager from './component/pages/pager.vue';
@@ -19,6 +20,8 @@ import Transfers from './component/pages/transfers.vue';
 import Area from './component/pages/area.vue';
 import Uploader from './component/pages/uploader.vue';
 import Textarea from './component/pages/textarea.vue';
+import Color from './component/pages/color.vue';
+import Space from './component/pages/space.vue';
 
 import VueRouter from 'vue-router';
 export default new VueRouter({
@@ -36,12 +39,20 @@ export default new VueRouter({
                 component: Base
             },
             {
+                path: 'space',
+                component: Space
+            },
+            {
                 path: 'designstyle',
                 component: DesignStyle
             },
             {
                 path: 'datepicker',
                 component: DatePicker
+            },
+            {
+                path: 'text',
+                component: Tt
             },
             {
                 path: 'button',
@@ -100,6 +111,9 @@ export default new VueRouter({
             }, {
                 path: 'textarea',
                 component: Textarea
+            }, {
+                path: 'color',
+                component: Color
             }]
         }
     ]

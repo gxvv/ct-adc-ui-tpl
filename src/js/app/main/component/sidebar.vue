@@ -21,7 +21,10 @@ export default {
             {
                 title: '规范',
                 child: [
-                    { path: 'font', title: '文本规范' }
+                    { path: 'text', title: 'Copywriting 文本' },
+                    { path: 'font', title: 'Typography 字体' },
+                    { path: 'color', title: 'Color 色彩' },
+                    { path: 'space', title: 'Space 间距' }
                 ]
             },
             {

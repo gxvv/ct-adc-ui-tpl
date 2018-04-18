@@ -23,7 +23,6 @@
                 </tbody>
             </table> 
         </div>
-
         <div v-if="attrs">
             <h3 class="pt3">{{name || ''}} Attributes</h3>
             <table class="table">
@@ -47,7 +46,6 @@
                 </tbody>
             </table> 
         </div>
-        
         <div v-if="events">
             <h3 class="pt3">{{name || ''}} Events</h3>
             <table class="table">
@@ -67,7 +65,6 @@
                 </tbody>
             </table>
         </div>
-
         <div v-if="slots">
             <h3 class="pt3">{{name || ''}} Slots</h3>
             <table class="table">
@@ -85,7 +82,6 @@
                 </tbody>
             </table>
         </div>
-        
         <div v-if="methods">
             <h3 class="pt3">{{name || ''}} Methods</h3>
             <table class="table">
@@ -107,6 +103,44 @@
                 </tbody>
             </table>
         </div>
+        <div v-if="texts">
+            <h3 class="pt3">{{name || ''}} 文本</h3>
+            <p v-if="desc">{{desc}}</p>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th style="width:200px;">名称</th>
+                        <th style="width:600px;">说明</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="item in texts">
+                        <td>{{item.name}}</td>
+                        <td>{{item.desc}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div v-if="fonts">
+            <h3 class="pt3">{{name || ''}} 字体</h3>
+            <slot name="desc"></slot>
+            <p v-if="desc">{{desc}}</p>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th style="width:200px;">名称</th>
+                        <th style="width:600px;">说明</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="item in fonts">
+                        <td>{{item.name}}</td>
+                        <td>{{item.desc}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </template>
 
@@ -117,7 +151,7 @@ export default {
 
         };
     },
-    props: ['name', 'options', 'attrs', 'events', 'slots', 'methods']
+    props: ['name', 'options', 'attrs', 'events', 'slots', 'methods', 'texts', 'desc', 'fonts']
 };
 </script>
 
