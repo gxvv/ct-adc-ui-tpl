@@ -39,7 +39,8 @@ export default {
                 {name: 'getDate', desc: '用于单一日期组件，获取当前的日期', params: 'readable 是否返回格式化的日期，如果为false，则返回时间戳', rt: '选择的日期'}
             ],
             methods2: [
-                {name: 'getDates', desc: '用于单一日期组件，获取当前的日期', params: 'readable,endTransfered ', rt: '选择的日期'}
+                {name: 'getDate', desc: '用于单一日期组件，获取当前的日期', params: 'readable', rt: '选择的日期'},
+                {name: 'getDates', desc: '用于开始结束日期组件，获取当前的开始结束日期', params: 'readable,endTransfered', rt: '{begin: 123132, end: 123123123}'}
             ],
             attrs2: [
                 {name: 'initialBeginDate', desc: '始日期初始值(可以是符合格式的日期或者时间戳)', type: 'String/Number', default: '-', all: '-'},

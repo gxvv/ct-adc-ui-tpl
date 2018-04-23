@@ -15,7 +15,8 @@ export default {
             nodeTree: [{
                 title: '简介',
                 child: [
-                    { path: 'overview', title: '简介' }
+                    { path: 'overview', title: '简介' },
+                    { path: 'principle', title: '原则' }
                 ]
             },
             {
@@ -40,18 +41,18 @@ export default {
                 title: '组件',
                 child: [
                     // { path: 'modal', title: '弹出表单' },
-                    { path: 'table', title: 'table 表格' },
+                    { path: 'table', title: 'Table 表格' },
                     // { path: 'search', title: 'search 搜索' },
-                    { path: 'autocomplete', title: 'autocomplete 模糊查询' },
-                    { path: 'pager', title: 'page 分页' },
-                    { path: 'minimsg', title: 'minimsg 弱提示', isDev: true},
-                    { path: 'datepicker', title: 'date 时间选择' },
-                    { path: 'slideout', title: 'slideout 滑出层' },
-                    { path: 'loading', title: 'loading 加载层' },
-                    { path: 'transfers', title: 'transfers 穿梭框' },
-                    { path: 'area', title: 'area-selector 地区选择' },
-                    { path: 'uploader', title: 'uploader 上传', isDev: true},
-                    { path: 'textarea', title: 'textarea 文本域'}
+                    { path: 'autocomplete', title: 'Autocomplete 模糊查询' },
+                    { path: 'pager', title: 'Page 分页' },
+                    { path: 'minimsg', title: 'Minimsg 弱提示', isDev: true},
+                    { path: 'datepicker', title: 'Date 时间选择' },
+                    { path: 'slideout', title: 'Slideout 滑出层' },
+                    { path: 'loading', title: 'Loading 加载层' },
+                    { path: 'transfers', title: 'Transfers 穿梭框' },
+                    { path: 'area', title: 'Area-selector 地区选择' },
+                    { path: 'uploader', title: 'Uploader 上传', isDev: true},
+                    { path: 'textarea', title: 'Textarea 文本域'}
                 ]
             },
             {
