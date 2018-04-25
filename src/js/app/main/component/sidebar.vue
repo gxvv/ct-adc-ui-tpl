@@ -25,7 +25,8 @@ export default {
                     { path: 'text', title: 'Copywriting 文本' },
                     { path: 'font', title: 'Typography 字体' },
                     { path: 'color', title: 'Color 色彩' },
-                    { path: 'space', title: 'Space 间距' }
+                    { path: 'space', title: 'Space 间距' },
+                    { path: 'other', title: '其他规范' }
                 ]
             },
             {

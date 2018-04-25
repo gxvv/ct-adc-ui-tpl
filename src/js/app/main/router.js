@@ -23,6 +23,7 @@ import Textarea from './component/pages/textarea.vue';
 import Color from './component/pages/color.vue';
 import Space from './component/pages/space.vue';
 import Principle from './component/pages/principle.vue';
+import Other from './component/pages/other.vue';
 
 import VueRouter from 'vue-router';
 export default new VueRouter({
@@ -35,6 +36,7 @@ export default new VueRouter({
                 path: 'overview',
                 component: Overview
             },
+            {path: 'other', component: Other},
             {
                 path: 'principle',
                 component: Principle

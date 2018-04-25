@@ -121,7 +121,6 @@
                 </tbody>
             </table>
         </div>
-
         <div v-if="fonts">
             <h3 class="pt3">{{name || ''}} 字体</h3>
             <slot name="desc"></slot>
@@ -141,6 +140,24 @@
                 </tbody>
             </table>
         </div>
+        <div v-if="interactives">
+            <h3 class="pt3">{{name || ''}} 交互</h3>
+            <p v-if="desc">{{desc}}</p>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th style="width:200px;">名称</th>
+                        <th style="width:600px;">说明</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="item in interactives">
+                        <td>{{item.name}}</td>
+                        <td>{{item.desc}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </template>
 
@@ -151,7 +168,7 @@ export default {
 
         };
     },
-    props: ['name', 'options', 'attrs', 'events', 'slots', 'methods', 'texts', 'desc', 'fonts']
+    props: ['name', 'options', 'attrs', 'events', 'slots', 'methods', 'texts', 'desc', 'fonts', 'interactives']
 };
 </script>
 

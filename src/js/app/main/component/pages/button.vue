@@ -15,15 +15,44 @@
     </demo>
 
     <demo title="不同尺寸" desc="各种尺寸大小的按钮">
-            <div slot="source">
-                <div>
-                    <button class="btn btn-primary btn-xs">主要按钮</button>
-                    <button class="btn btn-primary btn-sm">主要按钮</button>
-                    <button class="btn btn-primary">主要按钮</button>
-                    <button class="btn btn-primary btn-lg">主要按钮</button>
-                </div>
+        <div slot="source">
+            <div>
+                <button class="btn btn-primary btn-xs">主要按钮 .btn-xs</button>
+                <button class="btn btn-primary btn-sm">主要按钮 .btn-sm</button>
+                <button class="btn btn-primary">主要按钮</button>
+                <button class="btn btn-primary btn-lg">主要按钮 .btn-lg</button>
             </div>
-        </demo>
+        </div>
+    </demo>
+
+    <demo title="图标按钮">
+        <p slot="desc">带图标的按钮可增强辨识度（有文字）或节省空间（无文字），图标库：<a href="http://glyphicons.com/">glyphicons</a></p>
+        <div slot="source">
+            <div>
+                <button class="btn btn-primary"><i class="glyphicon glyphicon-refresh"></i> 刷新</button>
+                <button class="btn btn-primary"><i class="glyphicon glyphicon-zoom-in"></i> 放大</button>
+                <button class="btn btn-primary"><i class="glyphicon glyphicon-zoom-out"></i> 缩小</button>
+                <button class="btn btn-primary"><i class="glyphicon glyphicon-download-alt"></i> 下载</button>
+                <button class="btn btn-primary"><i class="glyphicon glyphicon-print"></i> 打印</button>
+            </div>
+            <br>
+            <div>
+                <button class="btn btn-primary"><i class="glyphicon glyphicon-refresh"></i></button>
+                <button class="btn btn-primary"><i class="glyphicon glyphicon-zoom-in"></i></button>
+                <button class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i></button>
+                <button class="btn btn-primary"><i class="glyphicon glyphicon-th-list"></i></button>
+                <button class="btn btn-primary"><i class="glyphicon glyphicon-off"></i></button>
+            </div>
+        </div>
+    </demo>
+
+    <demo title="加载中" desc="点击按钮后进行数据加载操作，在按钮上显示加载状态">
+        <div slot="source">
+            <div>
+                <button class="btn btn-primary" disabled><i class="glyphicon glyphicon-refresh rotate"></i> 保存中</button>
+            </div>
+        </div>
+    </demo>
 </div>
 </template>
 <script>
