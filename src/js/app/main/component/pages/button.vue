@@ -25,15 +25,41 @@
         </div>
     </demo>
 
-    <demo title="图标按钮">
+    <demo title="图标按钮，以下列举了一些常用的按钮">
         <p slot="desc">带图标的按钮可增强辨识度（有文字）或节省空间（无文字），图标库：<a href="http://glyphicons.com/">glyphicons</a></p>
         <div slot="source">
             <div>
+                <button class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i> 添加</button>
+                <button class="btn btn-primary"><i class="glyphicon glyphicon-search"></i> 搜索</button>
+                <button class="btn btn-primary"><i class="glyphicon glyphicon-import"></i> 导入</button>
+                <button class="btn btn-primary"><i class="glyphicon glyphicon-export"></i> 导出</button>
+                <button class="btn btn-primary"><i class="glyphicon glyphicon-edit"></i> 编辑</button>
                 <button class="btn btn-primary"><i class="glyphicon glyphicon-refresh"></i> 刷新</button>
-                <button class="btn btn-primary"><i class="glyphicon glyphicon-zoom-in"></i> 放大</button>
-                <button class="btn btn-primary"><i class="glyphicon glyphicon-zoom-out"></i> 缩小</button>
                 <button class="btn btn-primary"><i class="glyphicon glyphicon-download-alt"></i> 下载</button>
-                <button class="btn btn-primary"><i class="glyphicon glyphicon-print"></i> 打印</button>
+                <button class="btn btn-primary"><i class="glyphicon glyphicon-save"></i> 保存</button>
+            </div>
+            <br>
+            <div>
+                <button class="btn btn-info"><i class="glyphicon glyphicon-list-alt"></i> 查看</button>
+            </div>
+            <br>
+            <div>
+                <button class="btn btn-success"><i class="glyphicon glyphicon-check"></i> 启用</button>
+                <button class="btn btn-success"><i class="glyphicon glyphicon-check"></i> 上架</button>
+            </div>
+            <br>
+            <div>
+                <button class="btn btn-warning"><i class="glyphicon glyphicon-ban-circle"></i> 禁用</button>
+                <button class="btn btn-warning"><i class="glyphicon glyphicon-ban-circle"></i> 下架</button>
+            </div>
+            <br>
+            <div>
+                <button class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i> 删除</button>
+            </div>
+            <br>
+            <div>
+                <button class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i></button>
+                <button class="btn btn-default">取消</button>
             </div>
             <br>
             <div>
@@ -41,7 +67,8 @@
                 <button class="btn btn-primary"><i class="glyphicon glyphicon-zoom-in"></i></button>
                 <button class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i></button>
                 <button class="btn btn-primary"><i class="glyphicon glyphicon-th-list"></i></button>
-                <button class="btn btn-primary"><i class="glyphicon glyphicon-off"></i></button>
+                <button class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i></button>
+                <!-- <button class="btn btn-danger"><i class="glyphicon glyphicon-off"></i></button> -->
             </div>
         </div>
     </demo>
