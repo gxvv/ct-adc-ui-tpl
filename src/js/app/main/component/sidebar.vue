@@ -46,13 +46,13 @@ export default {
                     // { path: 'search', title: 'search 搜索' },
                     { path: 'autocomplete', title: 'Autocomplete 模糊查询' },
                     { path: 'pager', title: 'Page 分页' },
-                    { path: 'minimsg', title: 'Minimsg 弱提示', isDev: true},
+                    { path: 'minimsg', title: 'Minimsg 弱提示'},
                     { path: 'datepicker', title: 'Date 时间选择' },
                     { path: 'slideout', title: 'Slideout 滑出层' },
                     { path: 'loading', title: 'Loading 加载层' },
                     { path: 'transfers', title: 'Transfers 穿梭框' },
                     { path: 'area', title: 'Area-selector 地区选择' },
-                    { path: 'uploader', title: 'Uploader 上传', isDev: true},
+                    { path: 'uploader', title: 'Uploader 上传'},
                     { path: 'textarea', title: 'Textarea 文本域'}
                 ]
             },
