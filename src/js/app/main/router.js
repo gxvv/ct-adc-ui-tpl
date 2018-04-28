@@ -13,6 +13,7 @@ import MiniMsg from './component/pages/minimsg.vue';
 import DatePicker from './component/pages/datepicker.vue';
 import Table from './component/pages/table.vue';
 import Template1 from './component/pages/template1.vue';
+import Template2 from './component/pages/template2.vue';
 import Template1Detail from './component/modules/detail.vue';
 import SlideOut from './component/pages/slideout.vue';
 import Loading from './component/pages/loading.vue';
@@ -24,6 +25,13 @@ import Color from './component/pages/color.vue';
 import Space from './component/pages/space.vue';
 import Principle from './component/pages/principle.vue';
 import Other from './component/pages/other.vue';
+
+import GroupList from './component/pages/template2/components/group-list';
+import GroupManage from './component/pages/template2/components/group-manage';
+import NoticeList from './component/pages/template2/components/notice-list';
+import NoticeManage from './component/pages/template2/components/notice-manage';
+import MarqueeList from './component/pages/template2/components/marquee-list';
+import MarqueeManage from './component/pages/template2/components/marquee-manage';
 
 import VueRouter from 'vue-router';
 export default new VueRouter({
@@ -96,6 +104,29 @@ export default new VueRouter({
             {
                 path: 'template1',
                 component: Template1
+            },
+            {
+                path: 'template2',
+                component: Template2,
+                children: [{
+                    component: GroupList,
+                    path: 'GroupList',
+                    children: [
+                        {path: 'GroupManage', component: GroupManage}
+                    ]
+                }, {
+                    component: NoticeList,
+                    path: 'NoticeList',
+                    children: [
+                        {path: 'NoticeManage', component: NoticeManage}
+                    ]
+                }, {
+                    component: MarqueeList,
+                    path: 'MarqueeList',
+                    children: [
+                        {path: 'MarqueeManage', component: MarqueeManage}
+                    ]
+                }]
             },
             {
                 path: 'template1/detail/:id',

@@ -10,20 +10,27 @@
     "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "ct-adc-area-selector": "^1.2.0",
     "ct-adc-auto-complete": "^2.1.0",
+    "ct-adc-const": "^1.0.0-alpha.2",
+    "ct-adc-date": "^1.2.2",
     "ct-adc-form": "^2.2.0",
-    "ct-adc-list": "^3.0.0",
+    "ct-adc-list": "^4.0.1",
     "ct-adc-loading": "^1.0.0-alpha.3",
     "ct-adc-page": "^1.0.1",
+    "ct-adc-popper": "^1.0.3",
     "ct-adc-slideout": "^1.1.6",
     "ct-adc-textarea": "^2.0.0-alpha.1",
     "ct-adc-transfers": "^2.0.0",
+    "ct-adc-ueditor": "^1.1.1",
     "ct-adc-uploader": "^1.0.0-alpha.1",
     "highlight.js": "github:isagalaev/highlight.js",
     "marked": "^0.3.7",
+    "vee-validate": "^2.0.8",
     "vue": "^2.2.1",
-    "vue-router": "^2.2.0"
+    "vue-router": "^2.2.0",
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.2",

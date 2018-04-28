@@ -17,14 +17,15 @@
 <script>
 import Search from './search.vue';
 import List from 'ct-adc-list';
+import {table, column} from 'ct-adc-list';
 import Page from 'ct-adc-page';
 import API from 'common/api';
 import Const from 'common/const';
 export default {
     components: {
         Search,
-        'adc-table': List['adc-table'],
-        'adc-table-column': List['adc-table-column'],
+        'adc-table': table,
+        'adc-table-column': column,
         Page
     },
     data() {

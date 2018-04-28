@@ -35,7 +35,7 @@ export default {
                     // { path: 'designstyle', title: '设计风格' },
                     { path: 'base', title: 'Layout 布局' },
                     { path: 'button', title: 'Button 按钮' }
-                    
+
                 ]
             },
             {
@@ -59,7 +59,8 @@ export default {
             {
                 title: '案例',
                 child: [
-                    { path: 'template1', title: '案例1' }
+                    { path: 'template1', title: '案例1' },
+                    { path: 'template2/GroupList', title: '案例2' }
                 ]
             }
             ]

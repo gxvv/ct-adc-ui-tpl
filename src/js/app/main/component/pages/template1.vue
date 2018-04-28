@@ -13,7 +13,7 @@
 
 <script>
 import Search from '../modules/search.vue';
-import List from 'ct-adc-list';
+import {table, column} from 'ct-adc-list';
 import Page from 'ct-adc-page';
 import Vue from 'vue';
 import OperateBtns from '../modules/operate-btns.vue';
@@ -21,8 +21,8 @@ Vue.component('operate-btns', OperateBtns);
 export default {
     components: {
         Search,
-        'adc-table': List['adc-table'],
-        'adc-table-column': List['adc-table-column'],
+        'adc-table': table,
+        'adc-table-column': column,
         Page
     },
     data() {

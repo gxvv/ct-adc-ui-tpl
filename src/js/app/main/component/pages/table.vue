@@ -134,7 +134,7 @@
 
 <script>
 import Vue from 'vue';
-import List from 'ct-adc-list';
+import {table, column} from 'ct-adc-list';
 import Markdown from 'common/markdown';
 import CodeSnippet from 'common/code-snippet';
 import button2 from '../components/table-button';
@@ -143,8 +143,8 @@ Vue.component('button2', button2);
 
 export default {
     components: {
-        'adc-table': List['adc-table'],
-        'adc-table-column': List['adc-table-column'],
+        'adc-table': table,
+        'adc-table-column': column,
         Markdown,
         CodeSnippet
     },
