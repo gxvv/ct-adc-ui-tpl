@@ -17,7 +17,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr v-for="item in 3">
+                            <tr v-for="item in 3" :key="item">
                                 <td>xxx</td>
                                 <td>20</td>
                             </tr>
@@ -76,7 +76,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr v-for="item in 3">
+                            <tr v-for="item in 3" :key="item">
                                 <td>xxx</td>
                                 <td>20</td>
                             </tr>

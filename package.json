@@ -25,6 +25,7 @@
     "ct-adc-transfers": "^2.0.0",
     "ct-adc-ueditor": "^1.1.1",
     "ct-adc-uploader": "^1.0.0-alpha.1",
+    "ct-adc-mini-msg": "^1.0.0-alpha.1",
     "highlight.js": "github:isagalaev/highlight.js",
     "marked": "^0.3.7",
     "vee-validate": "^2.0.8",
