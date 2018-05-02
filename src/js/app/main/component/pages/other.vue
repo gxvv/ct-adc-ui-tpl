@@ -5,7 +5,7 @@
         <api name="其他" desc="" :interactives="interactives"/>
         
         <div class="img-wrap">
-            <img src="../../../../../../asset/images/1.png" alt="" class="img">
+            <img src="https://raw.githubusercontent.com/urlego/ct-adc-ui-tpl/master/asset/images/1.png" alt="" class="img">
             <div class="desc">1-1</div>
         </div>
 
