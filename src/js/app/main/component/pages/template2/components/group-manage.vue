@@ -10,6 +10,7 @@
                     <label class="col-sm-2 control-label"><i class="red">*</i> 公告组名称：</label>
                     <div class="col-sm-4" :class="{'has-error': errors.has('NoticeName')}">
                         <input type="text" maxlength="20" class="form-control" placeholder="请输入公告组名称" v-model="form.NoticeName" v-validate="'required'" data-vv-as="公告组名称" name="NoticeName">
+                        <popover content="简单的提示，格式：请输入xxx"></popover>
                         <span class="help-block" v-show="errors.has('NoticeName')"><i class="glyphicon glyphicon-remove-sign"></i> {{errors.first('NoticeName')}}</span>
                     </div>
                 </div>
@@ -17,12 +18,20 @@
                     <label class="col-sm-2 control-label"><i class="red">*</i> 游戏选择：</label>
                     <div class="col-sm-4" :class="{'has-error': errors.has('GameCode')}">
                         <auto-complete ref="ac" :maxlength="20" :list="gameList" :keys="keys" :showKeys="keys" :matchKeys="keys" :value="acValue" autoClear />
+                        <popover content="当输入不在列表中的内容时，清空输入框"></popover>
                         <span class="help-block" v-show="errors.has('GameCode')"><i class="glyphicon glyphicon-remove-sign"></i> {{errors.first('GameCode')}}</span>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label"><i class="red">*</i> 有效期：</label>
-                    <div class="col-sm-6" :class="{'has-error': errors.has('BeginDateTime') || errors.has('EndDateTime')}">
+                    <div class="col-sm-6">
+                      <div class="radio">
+                          <label><input type="radio" v-model="form.timeMode" :value="1">永久</label>
+                          <label class="ml20"><input type="radio" v-model="form.timeMode" :value="2">指定时间</label>
+                          <popover content="当切换有效期模式后，已经输入的有效期会清空" @shown="startDemo"></popover>
+                      </div>
+                    </div>
+                    <div v-show="form.timeMode === 2" class="col-sm-6 col-sm-offset-2" :class="{'has-error': errors.has('BeginDateTime') || errors.has('EndDateTime')}">
                         <dates-input :initialBeginDate="form.BeginDateTime" :initialEndDate="form.EndDateTime" ref="di" :beginOps="{type: 'datetime'}" :endOps="{type: 'datetime'}" />
                         <span class="help-block" v-show="errors.has('BeginDateTime')"><i class="glyphicon glyphicon-remove-sign"></i> {{errors.first('BeginDateTime')}}</span>
                         <span class="help-block" v-show="errors.has('EndDateTime')"><i class="glyphicon glyphicon-remove-sign"></i> {{errors.first('EndDateTime')}}</span>
@@ -34,7 +43,7 @@
                     <div class="col-sm-4 col-sm-offset-2">
                         <button class="btn btn-primary" @click="isDgShow2=true">保存
                         </button>
-                        <popover></popover>
+                        <popover content="点击保存时，显示loading层（阻止鼠标点击）"></popover>
                         <button class="btn btn-default" @click="hide">取消</button>
                     </div>
                 </div>
@@ -66,6 +75,7 @@ export default {
                 NoticeName: '',
                 GameId: '',
                 GameCode: '',
+                timeMode: 1,
                 BeginDateTime: '',
                 EndDateTime: ''
             },
@@ -161,6 +171,41 @@ export default {
                     });
                 }
             });
+        },
+        startDemo() {
+            const self = this;
+            const action = function* () {
+                yield () => {
+                    self.form.timeMode = 2;
+                };
+                yield () => {
+                    self.$refs.di.changeEndDate('2018-06-06');
+                };
+                yield () => {
+                    self.form.timeMode = 1;
+                };
+                yield () => {
+                    self.form.timeMode = 2;
+                };
+            };
+            const iterator = generate => {
+                const instance = generate();
+                const next = () => {
+                    const {value, done} = instance.next();
+
+                    if (done) {
+                        return;
+                    }
+                    value();
+                    setTimeout(() => {
+                        next();
+                    }, 1e3);
+                };
+
+                next();
+            };
+
+            iterator(action);
         }
     },
     created(){
@@ -199,6 +244,11 @@ export default {
         next(vm => {
             vm.isShow = true;
         });
+    },
+    watch: {
+        'form.timeMode'() {
+            this.$refs.di.initDates();
+        }
     }
 };
 
