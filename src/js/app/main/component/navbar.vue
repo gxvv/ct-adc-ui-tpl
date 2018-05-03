@@ -1,7 +1,7 @@
 <template lang="html">
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="flex">
-            <div class="t">后台 组件文档&交互规范</div>
+            <div class="t">前端组件文档与交互规范</div>
             <div class="flex-1">
                 <!-- <router-link to="" class="pull-right">例子</router-link>
                 <router-link to="" class="pull-right">文档</router-link> -->

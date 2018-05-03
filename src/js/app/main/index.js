@@ -8,12 +8,14 @@ import api from 'common/api';
 import demo from 'common/demo';
 import ds from 'common/desc';
 import CodeSnippet from 'common/code-snippet';
+import CImage from 'common/img';
 
 Vue.use(loading);
 Vue.component('api', api);
 Vue.component('ds', ds);
 Vue.component('demo', demo);
 Vue.component('CodeSnippet', CodeSnippet);
+Vue.component('CImage', CImage);
 
 new Vue({
     el: '#layout',
