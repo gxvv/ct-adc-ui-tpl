@@ -1,16 +1,38 @@
 <template lang="html">
-    <i class="glyphicon glyphicon-question-sign" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?" @click="$event => $event.cancelBubble = true"></i>
+    <i ref="popover" class="glyphicon glyphicon-question-sign" :title="title" :data-content="content" @click="clickCallback"></i>
 </template>
 
 <script>
 export default {
+    props: {
+        title: {
+            type: String,
+            default() {
+                return '基本规范';
+            }
+        },
+        content: {
+            type: String,
+            default() {
+                return '';
+            }
+        }
+    },
     methods: {
         clickCallback(event) {
-            console.log(event);
+            event.cancelBubble = true;
+            $(this.$refs.popover).popover('show');
         }
     },
     mounted() {
-        $('[data-toggle="popover"]').popover();
+        $(document).on('click', () => {
+            $(this.$refs.popover).popover('hide');
+        });
+        $(this.$refs.popover).on('hidden.bs.popover', () => {
+            this.$emit('hidden');
+        }).on('shown.bs.popover', () => {
+            this.$emit('shown');
+        });
     }
 };
 </script>
