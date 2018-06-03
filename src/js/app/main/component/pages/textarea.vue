@@ -3,7 +3,20 @@
         <ds pt2="限制级textarea" desc="可以自定输入规范的textarea" />
         <ds pt3="何时使用" desc="自定输入规范的textarea" />
         <demo title="基本用法" desc="可以自定输入规范的textarea">
-            <ta slot="source" />
+            <ta :maxlength="limitedLength" slot="source" v-model="content">
+                <template slot-scope="scope">
+                    <span :class="!scope.pass.length ? 'text-danger' : 'text-success'">{{scope.length}}</span>
+                    <template v-if=" limitedLength !== -1">
+                        /{{limitedLength}}
+                        <span class="pull-right text-danger" v-if="!scope.pass.length">
+                        长度不符合要求
+                    </span>
+                        <span class="pull-right text-danger" v-else-if="!scope.pass.format">
+                        格式不符合要求
+                    </span>
+                    </template>
+                </template>
+            </ta>
             <code-snippet slot="code">
                 &lt;ta slot="source" /&gt;
                 &lt;script&gt;
@@ -27,13 +40,8 @@ import ta from 'ct-adc-textarea';
 export default {
     data(){
         return {
-            dataSource1: [{
-                name: '小明',
-                age: 20
-            }, {
-                name: '小红',
-                age: 21
-            }],
+            content: '',
+            limitedLength: 200,
             attrs: [
                 {name: 'maxLength', desc: '控制的字符长度', type: 'Number', default: '-1', all: '-'},
                 {name: 'cut', desc: '超出长度时是否要截断内容', type: 'Boolean', default: false, all: '-'},

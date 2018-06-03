@@ -10,6 +10,7 @@ import AutoComplete from './component/pages/autocomplete.vue';
 import Pager from './component/pages/pager.vue';
 import Modal from './component/pages/modal.vue';
 import MiniMsg from './component/pages/minimsg.vue';
+import Popper from './component/pages/popper.vue';
 import DatePicker from './component/pages/datepicker.vue';
 import Table from './component/pages/table.vue';
 import Template1 from './component/pages/template1.vue';
@@ -24,7 +25,8 @@ import Textarea from './component/pages/textarea.vue';
 import Color from './component/pages/color.vue';
 import Space from './component/pages/space.vue';
 import Principle from './component/pages/principle.vue';
-import Other from './component/pages/other.vue';
+import Permission from './component/pages/permission.vue';
+import Workflow from './component/pages/workflow.vue';
 
 import GroupList from './component/pages/template2/components/group-list';
 import GroupManage from './component/pages/template2/components/group-manage';
@@ -41,72 +43,83 @@ export default new VueRouter({
             component: Layout,
             redirect: '/overview',
             children: [{
-                path: 'overview',
+                path: '/overview',
                 component: Overview
             },
-            {path: 'other', component: Other},
             {
-                path: 'principle',
+                path: '/principle',
                 component: Principle
             },
             {
-                path: 'base',
+                path: '/base',
                 component: Base
             },
             {
-                path: 'space',
+                path: '/space',
                 component: Space
             },
             {
-                path: 'designstyle',
+                path: '/permission',
+                component: Permission
+            },
+            {
+                path: '/workflow',
+                component: Workflow
+            },
+            {
+                path: '/designstyle',
                 component: DesignStyle
             },
             {
-                path: 'datepicker',
+                path: '/datepicker',
                 component: DatePicker
             },
             {
-                path: 'text',
+                path: '/text',
                 component: Tt
             },
             {
-                path: 'button',
+                path: '/button',
                 component: Button
             },
             {
-                path: 'font',
+                path: '/font',
                 component: Font
             },
             {
-                path: 'search',
+                path: '/search',
                 component: Search
             },
             {
-                path: 'autocomplete',
+                path: '/autocomplete',
                 component: AutoComplete
             },
             {
-                path: 'pager',
+                path: '/pager',
                 component: Pager
             },
             {
-                path: 'modal',
+                path: '/modal',
                 component: Modal
             },
             {
-                path: 'minimsg',
+                path: '/minimsg',
                 component: MiniMsg
             },
             {
-                path: 'table',
+                path: '/popper',
+                component: Popper
+            },
+            {
+                path: '/table',
                 component: Table
             },
             {
-                path: 'template1',
+                path: '/template1',
                 component: Template1
             },
             {
-                path: 'template2',
+                path: '/template2',
                 component: Template2,
                 children: [{
                     component: GroupList,
@@ -129,28 +142,28 @@ export default new VueRouter({
                 }]
             },
             {
-                path: 'template1/detail/:id',
+                path: '/template1/detail/:id',
                 component: Template1Detail
             }, {
-                path: 'slideOut',
+                path: '/slideOut',
                 component: SlideOut
             }, {
-                path: 'loading',
+                path: '/loading',
                 component: Loading
             }, {
-                path: 'transfers',
+                path: '/transfers',
                 component: Transfers
             }, {
-                path: 'area',
+                path: '/area',
                 component: Area
             }, {
-                path: 'uploader',
+                path: '/uploader',
                 component: Uploader
             }, {
-                path: 'textarea',
+                path: '/textarea',
                 component: Textarea
             }, {
-                path: 'color',
+                path: '/color',
                 component: Color
             }]
         }

@@ -3,7 +3,9 @@
         <ds pt2="地区选择" desc="选择地区" />
         <ds pt3="何时使用" desc="选择地区" />
         <demo title="基本用法" desc="选择地区，省、市、区">
-            <div style="width: 600px;" slot="source"><area-selector showNation /></div>
+            <div style="width: 600px;" slot="source">
+                <area-selector showNation />
+            </div>
             <code-snippet slot="code">
                 &lt;div style="width: 600px;" slot="source"&gt;&lt;area-selector showNation /&gt;&lt;/div/&gt;
                 &lt;script&gt;

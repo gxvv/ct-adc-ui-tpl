@@ -61,11 +61,10 @@ export default {
     data(){
         return {
             fonts: [
-                {name: '正文文字', desc: '12px #333333'},
-                {name: '标题文字', desc: '14px bold #333333'},
-                {name: '链接文字', desc: '12px #337ab7'},
-                {name: '链接文字hover状态', desc: '12px #204d74'},
-                {name: '辅助文字', desc: '12px #777777'}
+                {name: '<span style="font-size: 12px; color: #333333">正文文字</span>', desc: '12px #333333'},
+                {name: '<span style="font-size: 14px; color: #333333">标题文字</span>', desc: '14px bold #333333'},
+                {name: '<a href="javascript:;" class="link">链接</a>', desc: '12px #337ab7'},
+                {name: '<span class="text-muted" style="font-size: 12px;">辅助文字</a>', desc: '12px #777777'}
             ]
         };
     }

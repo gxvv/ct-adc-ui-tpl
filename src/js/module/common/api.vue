@@ -134,7 +134,7 @@
                 </thead>
                 <tbody>
                     <tr v-for="item in fonts">
-                        <td>{{item.name}}</td>
+                        <td v-html="item.name"></td>
                         <td>{{item.desc}}</td>
                     </tr>
                 </tbody>
