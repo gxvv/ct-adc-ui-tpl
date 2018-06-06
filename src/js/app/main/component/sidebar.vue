@@ -47,11 +47,13 @@ export default {
                     { path: '/loading', title: 'Loading 加载层' },
                     { path: '/minimsg', title: 'Minimsg 弱提示'},
                     { path: '/pager', title: 'Page 分页' },
+                    { path: '/pattern-input', title: 'PatternInput 定制输入框' },
                     { path: '/popper', title: 'Popper 气泡' },
                     { path: '/slideout', title: 'Slideout 滑出层' },
                     { path: '/table', title: 'Table 表格' },
                     { path: '/textarea', title: 'Textarea 文本域'},
                     { path: '/transfers', title: 'Transfers 穿梭框' },
+                    { path: '/tree', title: 'Tree 树' },
                     { path: '/uploader', title: 'Uploader 上传'}
                     
                     // { path: 'modal', title: '弹出表单' },
@@ -61,7 +63,7 @@ export default {
             {
                 title: '案例',
                 child: [
-                    { path: '/template1', title: '案例1' },
+                    // { path: '/template1', title: '案例1' },
                     { path: '/template2/GroupList', title: '案例2' }
                 ]
             }

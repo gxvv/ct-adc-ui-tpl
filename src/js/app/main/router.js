@@ -11,14 +11,16 @@ import Pager from './component/pages/pager.vue';
 import Modal from './component/pages/modal.vue';
 import MiniMsg from './component/pages/minimsg.vue';
 import Popper from './component/pages/popper.vue';
+import PatternInput from './component/pages/pattern-input.vue';
 import DatePicker from './component/pages/datepicker.vue';
 import Table from './component/pages/table.vue';
-import Template1 from './component/pages/template1.vue';
+// import Template1 from './component/pages/template1.vue';
 import Template2 from './component/pages/template2.vue';
 import Template1Detail from './component/modules/detail.vue';
 import SlideOut from './component/pages/slideout.vue';
 import Loading from './component/pages/loading.vue';
 import Transfers from './component/pages/transfers.vue';
+import Tree from './component/pages/tree.vue';
 import Area from './component/pages/area.vue';
 import Uploader from './component/pages/uploader.vue';
 import Textarea from './component/pages/textarea.vue';
@@ -111,13 +113,17 @@ export default new VueRouter({
                 component: Popper
             },
             {
+                path: '/pattern-input',
+                component: PatternInput
+            },
+            {
                 path: '/table',
                 component: Table
             },
-            {
-                path: '/template1',
-                component: Template1
-            },
+            // {
+            //     path: '/template1',
+            //     component: Template1
+            // },
             {
                 path: '/template2',
                 component: Template2,
@@ -153,6 +159,9 @@ export default new VueRouter({
             }, {
                 path: '/transfers',
                 component: Transfers
+            }, {
+                path: '/tree',
+                component: Tree
             }, {
                 path: '/area',
                 component: Area
